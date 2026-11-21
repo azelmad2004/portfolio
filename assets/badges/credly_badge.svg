@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="credlyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+  </defs>
+  <polygon points="60,8 108,35 108,85 60,112 12,85 12,35" fill="url(#credlyGrad)" stroke="#fde68a" stroke-width="2"/>
+  <polygon points="60,16 100,39 100,81 60,104 20,81 20,39" fill="#241505"/>
+  <text x="60" y="52" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="900" fill="#f59e0b" text-anchor="middle">Credly</text>
+  <text x="60" y="67" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" font-weight="800" fill="#ffffff" text-anchor="middle">CLOUD &amp; DEVOPS</text>
+  <text x="60" y="78" font-family="system-ui, -apple-system, sans-serif" font-size="6.5" font-weight="700" fill="#fde68a" text-anchor="middle">PRACTITIONER</text>
+</svg>

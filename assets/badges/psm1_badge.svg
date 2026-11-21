@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="scrumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#scrumGrad)" stroke="#7dd3fc" stroke-width="2.5"/>
+  <circle cx="60" cy="60" r="48" fill="#082f49" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <text x="60" y="48" font-family="system-ui, -apple-system, sans-serif" font-size="8" font-weight="700" fill="#bae6fd" text-anchor="middle">Scrum.org</text>
+  <text x="60" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="900" fill="#ffffff" text-anchor="middle">PSM I</text>
+  <text x="60" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="6" font-weight="700" fill="#38bdf8" text-anchor="middle" letter-spacing="0.5">VERIFIED AGILIST</text>
+</svg>
