@@ -1364,3 +1364,219 @@ Verified Certifications:
     }
   });
 })();
+
+
+/* ============================================================
+   TRADING BACKGROUND CANVAS ANIMATION
+   ============================================================ */
+(function initTradingBg() {
+  const canvas = document.getElementById('tradingBgCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  let w, h, points = [], animFrame;
+
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+
+  function generateChart() {
+    points = [];
+    let y = h * 0.5;
+    const count = Math.ceil(w / 12) + 2;
+    for (let i = 0; i < count; i++) {
+      y += (Math.random() - 0.48) * h * 0.04;
+      y = Math.max(h * 0.15, Math.min(h * 0.85, y));
+      points.push({ x: i * 12, y });
+    }
+  }
+
+  function drawGrid() {
+    ctx.clearRect(0, 0, w, h);
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const lineColor = isDark ? 'rgba(99,179,237,0.12)' : 'rgba(59,130,246,0.09)';
+    const chartColor = isDark ? 'rgba(32,190,255,0.5)' : 'rgba(59,130,246,0.45)';
+    const fillColor = isDark ? 'rgba(32,190,255,0.06)' : 'rgba(59,130,246,0.04)';
+
+    // Horizontal grid lines
+    ctx.strokeStyle = lineColor;
+    ctx.lineWidth = 0.8;
+    for (let i = 0; i < 8; i++) {
+      const y = (h / 8) * i;
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(w, y);
+      ctx.stroke();
+    }
+
+    // Vertical grid lines
+    for (let i = 0; i < 20; i++) {
+      const x = (w / 20) * i;
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, h);
+      ctx.stroke();
+    }
+
+    if (points.length < 2) return;
+
+    // Fill area
+    ctx.beginPath();
+    ctx.moveTo(points[0].x, h);
+    ctx.lineTo(points[0].x, points[0].y);
+    for (let i = 1; i < points.length; i++) {
+      ctx.lineTo(points[i].x, points[i].y);
+    }
+    ctx.lineTo(points[points.length - 1].x, h);
+    ctx.closePath();
+    ctx.fillStyle = fillColor;
+    ctx.fill();
+
+    // Chart line
+    ctx.beginPath();
+    ctx.moveTo(points[0].x, points[0].y);
+    for (let i = 1; i < points.length; i++) {
+      ctx.lineTo(points[i].x, points[i].y);
+    }
+    ctx.strokeStyle = chartColor;
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // Candle wicks (decorative)
+    ctx.strokeStyle = isDark ? 'rgba(34,197,94,0.25)' : 'rgba(34,197,94,0.2)';
+    ctx.lineWidth = 0.8;
+    for (let i = 0; i < points.length; i += 6) {
+      const x = points[i].x;
+      const y = points[i].y;
+      ctx.beginPath();
+      ctx.moveTo(x, y - 12);
+      ctx.lineTo(x, y + 12);
+      ctx.stroke();
+    }
+  }
+
+  // Animate: slowly drift the chart
+  let offset = 0;
+  function animate() {
+    offset += 0.3;
+    if (offset >= 12) {
+      offset = 0;
+      points.shift();
+      let last = points[points.length - 1];
+      let ny = last.y + (Math.random() - 0.48) * h * 0.04;
+      ny = Math.max(h * 0.15, Math.min(h * 0.85, ny));
+      points.push({ x: last.x + 12, y: ny });
+    }
+    // Shift all points left by offset
+    ctx.clearRect(0, 0, w, h);
+    const shifted = points.map(p => ({ x: p.x - offset, y: p.y }));
+    const saved = points;
+    points = shifted;
+    drawGrid();
+    points = saved;
+    animFrame = requestAnimationFrame(animate);
+  }
+
+  resize();
+  generateChart();
+  animate();
+
+  window.addEventListener('resize', () => {
+    resize();
+    generateChart();
+  });
+})();
+
+/* ============================================================
+   KNOW ME QUIZ LOGIC
+   ============================================================ */
+(function initKnowMeQuiz() {
+  const quizContainer = document.getElementById('knowmeQuiz');
+  const scoreReveal = document.getElementById('quizScoreReveal');
+  const scoreNum = document.getElementById('quizScoreNum');
+  const resetBtn = document.getElementById('quizResetBtn');
+  if (!quizContainer) return;
+
+  const cards = Array.from(quizContainer.querySelectorAll('.quiz-card'));
+  const totalCards = cards.length;
+
+  function updateScore() {
+    let answered = 0;
+    let score = 0;
+    cards.forEach(card => {
+      if (card.dataset.chosen !== undefined) {
+        answered++;
+        if (card.dataset.chosen === card.dataset.answer) score++;
+      }
+    });
+    if (scoreNum) scoreNum.textContent = score;
+    if (scoreReveal && answered === totalCards) {
+      scoreReveal.style.display = 'block';
+    }
+  }
+
+  cards.forEach(card => {
+    const correctIdx = parseInt(card.dataset.answer, 10);
+    const opts = card.querySelectorAll('.quiz-opt');
+    const feedback = card.querySelector('.quiz-feedback');
+    const correctText = opts[correctIdx] ? opts[correctIdx].textContent.trim() : '';
+
+    opts.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const chosen = parseInt(btn.dataset.idx, 10);
+        card.dataset.chosen = String(chosen);
+
+        opts.forEach(b => {
+          b.classList.remove('correct', 'wrong');
+          const idx = parseInt(b.dataset.idx, 10);
+          if (idx === correctIdx) b.classList.add('correct');
+          else if (idx === chosen) b.classList.add('wrong');
+        });
+
+        if (chosen === correctIdx) {
+          if (feedback) {
+            feedback.textContent = '✓ Correct!';
+            feedback.className = 'quiz-feedback is-correct';
+          }
+        } else if (feedback) {
+          feedback.textContent = `✗ Wrong — Correct answer: ${correctText}`;
+          feedback.className = 'quiz-feedback is-wrong';
+        }
+        updateScore();
+      });
+    });
+  });
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      if (scoreReveal) scoreReveal.style.display = 'none';
+      if (scoreNum) scoreNum.textContent = '0';
+      cards.forEach(card => {
+        delete card.dataset.chosen;
+        const feedback = card.querySelector('.quiz-feedback');
+        if (feedback) {
+          feedback.textContent = '';
+          feedback.className = 'quiz-feedback';
+        }
+        card.querySelectorAll('.quiz-opt').forEach(btn => {
+          btn.classList.remove('correct', 'wrong');
+        });
+      });
+    });
+  }
+})();
+
+/* ============================================================
+   PROJECT DECISIONS ACCORDION TOGGLE
+   ============================================================ */
+(function initProjectDecisions() {
+  document.querySelectorAll('.project-decisions-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const wrap = btn.closest('.project-decisions-wrap');
+      if (!wrap) return;
+      const isOpen = wrap.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+})();

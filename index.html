@@ -32,12 +32,15 @@
   <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261128">
 </head>
 
 <body>
   <div class="scroll-progress-bar" id="scrollProgressBar"></div>
 
+
+  <!-- Trading Chart Background Canvas -->
+  <canvas id="tradingBgCanvas" class="trading-bg-canvas" aria-hidden="true"></canvas>
 
   <!-- Ambient Fluid Luminous Orbs -->
   <div class="ambient-glow" aria-hidden="true">
@@ -190,6 +193,18 @@
               title="X / Twitter" aria-label="X">
               <i class="fa-brands fa-x-twitter"></i>
             </a>
+            <a href="https://www.kaggle.com/mohamedazelmad255555" target="_blank" rel="noopener noreferrer"
+              class="social-glass-icon social-brand-icon" title="Kaggle Profile" aria-label="Kaggle">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#20BEFF" aria-hidden="true">
+                <path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.335"/>
+              </svg>
+            </a>
+            <a href="assets/Trainy_certification_-_azelmad_mohamed.png" target="_blank" rel="noopener noreferrer"
+              class="social-glass-icon social-brand-icon" title="Trainy Certification" aria-label="Trainy">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 6h16M12 6v13M8 19h8"/>
+              </svg>
+            </a>
             <a href="mailto:mohmadazelmad3@gmail.com" class="social-glass-icon" title="Send Direct Email"
               aria-label="Email">
               <i class="fa-solid fa-envelope"></i>
@@ -209,7 +224,7 @@
           <div class="trusted-by-wrapper">
             <span class="trusted-by-label" data-i18n="hero.collaborations">Trusted & Associated With</span>
             <div class="trusted-badges-grid">
-              <a href="https://estkh.usms.ac.ma/" target="_blank" rel="noopener noreferrer" class="trusted-chip">
+              <a href="https://est.uit.ac.ma/" target="_blank" rel="noopener noreferrer" class="trusted-chip">
                 <img src="assets/est_kenitra_logo.png" alt="EST Kénitra" class="trusted-icon">
                 <span data-i18n="hero.chip_est">EST Kénitra (GIGD)</span>
               </a>
@@ -243,6 +258,11 @@
             <div class="portrait-glass-frame">
               <img src="assets/img/hero.png" alt="Mohamed Azelmad — Portrait" class="hero-portrait"
                 onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
+            </div>
+
+            <!-- Floating 3D Principal Logo Badge -->
+            <div class="floating-logo-3d" title="Mohamed Azelmad — Brand Emblem">
+              <img src="assets/LOGO_principal.png" alt="Mohamed Azelmad 3D Logo" class="logo-3d-img">
             </div>
 
             <!-- Floating 3D Sparkle / Glass Sphere from Mockup -->
@@ -349,7 +369,7 @@
               corporate balance sheet.
             </p>
             <p data-i18n="about.bg_p2">
-              This dual competence allows me to design enterprise systems like <strong>MyWallet MW</strong> with zero
+              This dual competence allows me to design enterprise systems like <strong>Khlas Wallet</strong> with zero
               architectural impedance, communicate effectively with both business executives and system administrators,
               and deliver frictionless user experiences.
             </p>
@@ -393,29 +413,29 @@
         <article class="glass-card blueprint-card">
           <div class="blueprint-header">
             <span class="fig-badge">FIG. 01 · AI PIPELINE</span>
-            <span class="fig-status">RAG + FAISS</span>
+            <span class="fig-status">RapidFuzz + Fine-Tuned LLM</span>
           </div>
-          <h3 class="blueprint-title">Awal GPT: Dialectal Moroccan RAG Engine</h3>
+          <h3 class="blueprint-title">Awal GPT: Dialectal Moroccan AI Engine</h3>
           <p class="blueprint-desc">
-            Standard LLMs hallucinate on Moroccan Darija & Amazigh due to dialectal code-switching. Awal GPT uses
-            localized semantic embeddings with vector similarity indexing.
+            Standard LLMs hallucinate on Moroccan Darija &amp; Amazigh due to dialectal code-switching. Awal GPT combines
+            RapidFuzz lexical retrieval with a fine-tuned Qwen2.5-3B model.
           </p>
           <div class="blueprint-code-block">
-            <div class="bp-step"><span>01</span> <strong>User Query:</strong> Darija / Amazigh text normalization &
+            <div class="bp-step"><span>01</span> <strong>User Query:</strong> Darija / Amazigh text normalization &amp;
               Arabizi transliteration</div>
             <div class="bp-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-            <div class="bp-step"><span>02</span> <strong>Vectorization:</strong> Multilingual dense sentence transformer
-              embeddings</div>
+            <div class="bp-step"><span>02</span> <strong>NLP Filtering:</strong> spaCy linguistic tokenization &amp;
+              morphological parsing</div>
             <div class="bp-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-            <div class="bp-step"><span>03</span> <strong>Retrieval:</strong> FAISS indexing across Moroccan cultural and
-              linguistic corpora</div>
+            <div class="bp-step"><span>03</span> <strong>Retrieval:</strong> RapidFuzz approximate matching across 9,000+
+              IRCAM lexical entries</div>
             <div class="bp-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-            <div class="bp-step"><span>04</span> <strong>Generation:</strong> LLM prompt augmentation with localized
-              guardrails</div>
+            <div class="bp-step"><span>04</span> <strong>Generation:</strong> Fine-tuned Qwen2.5-3B inference with
+              localized guardrails</div>
           </div>
           <div class="blueprint-footer">
-            <span class="bp-tag">Python</span><span class="bp-tag">LangChain</span><span
-              class="bp-tag">FAISS</span><span class="bp-tag">RAG</span>
+            <span class="bp-tag">Python</span><span class="bp-tag">RapidFuzz</span><span
+              class="bp-tag">Fine-Tuned Model</span><span class="bp-tag">RAG</span>
           </div>
         </article>
 
@@ -449,13 +469,13 @@
           </div>
         </article>
 
-        <!-- Blueprint 03: MyWallet MW -->
+        <!-- Blueprint 03: Khlas Wallet -->
         <article class="glass-card blueprint-card">
           <div class="blueprint-header">
             <span class="fig-badge">FIG. 03 · FINTECH LEDGER</span>
             <span class="fig-status">Moroccan Tax Engine</span>
           </div>
-          <h3 class="blueprint-title">MyWallet MW: Double-Entry & VAT Automation</h3>
+          <h3 class="blueprint-title">Khlas Wallet: Double-Entry &amp; VAT Automation</h3>
           <p class="blueprint-desc">
             A compliance-first financial engine enforcing strict accounting balance invariants (Debit = Credit) with
             automated Moroccan VAT declarations (TVA 20%, 14%, 10%).
@@ -526,10 +546,10 @@
           <h3 class="service-name" data-i18n="services.s2_title">AI & Dialectal NLP (RAG)</h3>
           <p class="service-desc" data-i18n="services.s2_desc">
             Pioneering localized AI solutions tailored for Moroccan Darija and Amazigh. Retrieval-Augmented Generation
-            (RAG) using FAISS, LangChain, vector embeddings, and specialized fine-tuning.
+            (RAG) using RapidFuzz, spaCy, and specialized LLM fine-tuning.
           </p>
           <div class="service-tech-pills">
-            <span>LangChain</span><span>FAISS</span><span>Python</span><span>LLMs</span>
+            <span>RapidFuzz</span><span>Fine-Tuning</span><span>Python</span><span>LLMs</span>
           </div>
         </div>
 
@@ -901,6 +921,98 @@
           </div>
         </div>
 
+        <!-- R Programming (Merged from Quant Toolkit) -->
+        <div class="glass-card tech-pill-card" data-cat="lang ai">
+          <div class="tech-icon"><i class="fa-brands fa-r-project" style="color:#276DC3; font-size:2rem;"></i></div>
+          <div class="tech-info">
+            <span class="tech-title">R (Statistical Computing)</span>
+            <div class="skill-meter-track" title="Maîtrise">
+              <div class="skill-meter-fill" style="width: 82%;"></div>
+            </div>
+            <span class="tech-level">Analyse statistique, séries temporelles &amp; économétrie</span>
+          </div>
+        </div>
+
+        <!-- SciPy & statsmodels -->
+        <div class="glass-card tech-pill-card" data-cat="ai">
+          <div class="tech-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#0054A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/>
+            </svg>
+          </div>
+          <div class="tech-info">
+            <span class="tech-title">SciPy &amp; statsmodels</span>
+            <div class="skill-meter-track" title="Maîtrise Avancée">
+              <div class="skill-meter-fill" style="width: 86%;"></div>
+            </div>
+            <span class="tech-level">Calcul scientifique, optimisation numérique, régressions &amp; tests</span>
+          </div>
+        </div>
+
+        <!-- PyTorch -->
+        <div class="glass-card tech-pill-card" data-cat="ai">
+          <div class="tech-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="#EE4C2C" aria-hidden="true">
+              <path d="M12.005 2L7.34 6.665a6.6 6.6 0 1 0 9.33 0l-1.39 1.39a4.63 4.63 0 1 1-6.55 0L12.005 4.78V2zm3.28 2.43a1.05 1.05 0 1 0 0 2.1 1.05 1.05 0 0 0 0-2.1z"/>
+            </svg>
+          </div>
+          <div class="tech-info">
+            <span class="tech-title">PyTorch</span>
+            <div class="skill-meter-track" title="Maîtrise Avancée">
+              <div class="skill-meter-fill" style="width: 85%;"></div>
+            </div>
+            <span class="tech-level">Réseaux de neurones profonds, tenseurs &amp; Deep Learning</span>
+          </div>
+        </div>
+
+        <!-- Strategic Asset Allocation -->
+        <div class="glass-card tech-pill-card" data-cat="finance">
+          <div class="tech-icon"><i class="fa-solid fa-chart-line" style="color:#10b981; font-size:2rem;"></i></div>
+          <div class="tech-info">
+            <span class="tech-title">Strategic Asset Allocation</span>
+            <div class="skill-meter-track" title="Expertise Quant">
+              <div class="skill-meter-fill" style="width: 88%;"></div>
+            </div>
+            <span class="tech-level">Optimisation de portefeuille, frontière efficiente &amp; diversification</span>
+          </div>
+        </div>
+
+        <!-- Derivative Pricing Models -->
+        <div class="glass-card tech-pill-card" data-cat="finance">
+          <div class="tech-icon"><i class="fa-solid fa-square-root-variable" style="color:#6366f1; font-size:2rem;"></i></div>
+          <div class="tech-info">
+            <span class="tech-title">Derivative Pricing Models</span>
+            <div class="skill-meter-track" title="Expertise Quant">
+              <div class="skill-meter-fill" style="width: 86%;"></div>
+            </div>
+            <span class="tech-level">Black-Scholes, Monte Carlo, arbres binomiaux &amp; grecques</span>
+          </div>
+        </div>
+
+        <!-- Structured Products -->
+        <div class="glass-card tech-pill-card" data-cat="finance">
+          <div class="tech-icon"><i class="fa-solid fa-cubes" style="color:#f59e0b; font-size:2rem;"></i></div>
+          <div class="tech-info">
+            <span class="tech-title">Structured Products</span>
+            <div class="skill-meter-track" title="Expertise Quant">
+              <div class="skill-meter-fill" style="width: 84%;"></div>
+            </div>
+            <span class="tech-level">Ingénierie de payoffs, autocalls, obligations structurées</span>
+          </div>
+        </div>
+
+        <!-- Risk Management -->
+        <div class="glass-card tech-pill-card" data-cat="finance">
+          <div class="tech-icon"><i class="fa-solid fa-shield-halved" style="color:#ef4444; font-size:2rem;"></i></div>
+          <div class="tech-info">
+            <span class="tech-title">Risk Management</span>
+            <div class="skill-meter-track" title="Expertise Quant">
+              <div class="skill-meter-fill" style="width: 90%;"></div>
+            </div>
+            <span class="tech-level">Value at Risk (VaR), stress testing, couverture &amp; détection de fraude</span>
+          </div>
+        </div>
+
       </div>
 
       <!-- SPOKEN LANGUAGES & IDIOMS (FROM CV PAGE 2) -->
@@ -998,177 +1110,248 @@
         </p>
       </div>
 
-      <!-- 3-In-A-Row PharmaQ-Style Project Grid (Exact Match Screenshot 1) -->
-      <div class="projects-three-grid" id="projectGrid">
+      <!-- Maktodex-Style Split Showcase Project Cards (Portfolio Color Palette) -->
+      <div class="projects-showcase-list" id="projectGrid">
 
-        <!-- PROJECT 1: UniStay -->
-        <article class="pharmaq-card glass-card project-pharmaq" data-cat="mobile">
-          <div class="pharmaq-preview-wrap">
-            <img src="assets/unistay .png" alt="UniStay Platform Preview" class="pharmaq-img">
-            <div class="pharmaq-top-bar">
-              <span class="pharmaq-status-badge badge-active"><img src="assets/enactus_logo.png" alt="Enactus"
-                  style="width:16px; height:16px; object-fit:contain; vertical-align:middle; margin-right:4px;"> Enactus
-                · Production</span>
-              <a href="https://github.com/azelmad2004/unistay" target="_blank" rel="noopener noreferrer"
-                class="pharmaq-mini-gh" title="GitHub Repository"><i class="fa-brands fa-github"></i></a>
-            </div>
+        <!-- PROJECT 1: Awal GPT -->
+        <article class="project-split-card glass-card" data-cat="ai">
+          <div class="project-split-media">
+            <img src="assets/projet_awal_gpt.png" alt="Awal GPT AI Preview" class="project-split-img">
+            <a href="https://www.researchgate.net/publication/406309058_AWAL_GPT_A_Conversational_AI_System_for_Latinized_Amazigh_Language"
+              target="_blank" rel="noopener noreferrer" class="project-media-pill">
+              <i class="fa-brands fa-researchgate"></i> Read Paper
+            </a>
           </div>
-          <div class="pharmaq-overlay-pill">
-            <div class="pharmaq-pill-header">
-              <h3 class="pharmaq-title">UniStay</h3>
-              <a href="https://github.com/azelmad2004/unistay" target="_blank" rel="noopener noreferrer"
-                class="pharmaq-arrow" title="Voir Projet"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <div class="project-split-body">
+            <div class="project-split-header">
+              <h3 class="project-split-title">Awal GPT</h3>
+              <span class="project-split-meta">AI &amp; NLP, 2025</span>
             </div>
-            <p class="pharmaq-desc">
-              Plateforme mobile & web de gestion et réservation de logements universitaires pour étudiants marocains —
-              matching intelligent, gestion des baux et intégration de visites virtuelles.
+            <p class="project-split-desc">
+              Conversational AI System for Latinized Amazigh &amp; Moroccan Darija — 9,000+ IRCAM lexical entries with RapidFuzz matching, spaCy NLP and local RAG Qwen2.5-3B inference.
             </p>
-            <div class="pharmaq-tags">
-              <span>Flutter</span><span>Dart</span><span>Firebase</span><span>UI/UX</span>
+            <div class="project-spec-table">
+              <div class="project-spec-row">
+                <span class="spec-label">My part</span>
+                <span class="spec-value">Creator, NLP &amp; RAG pipeline architect</span>
+              </div>
+              <div class="project-spec-row">
+                <span class="spec-label">Built with</span>
+                <span class="spec-value">Python, RapidFuzz, Fine-Tuned Qwen2.5-3B, spaCy, RAG</span>
+              </div>
+              <div class="project-spec-row">
+                <span class="spec-label">Outcome</span>
+                <span class="spec-value">PFE Mention Très Bien &amp; published on ResearchGate</span>
+              </div>
             </div>
-            <div class="pharmaq-footer-actions">
-              <a href="https://github.com/azelmad2004/unistay" target="_blank" rel="noopener noreferrer"
-                class="btn-pharmaq-action"><i class="fa-brands fa-github"></i> Code Source</a>
+            <div class="project-decisions-wrap">
+              <button type="button" class="project-decisions-toggle" aria-expanded="false">
+                <span>Decisions</span>
+                <i class="fa-solid fa-plus"></i>
+              </button>
+              <div class="project-decisions-content">
+                <p>Chose local CPU-optimized Qwen2.5-3B + RapidFuzz fuzzy lexical retrieval over cloud APIs to preserve data sovereignty and handle Amazigh/Darija code-switching with zero latency fees.</p>
+              </div>
+            </div>
+            <div class="project-split-actions">
+              <a href="https://github.com/azelmad2004/awalgpt" target="_blank" rel="noopener noreferrer" class="btn-primary-pill project-cta-pill">
+                View on GitHub
+              </a>
+              <a href="pdfs/PRESENTATION_awal_gpt.pdf" target="_blank" rel="noopener noreferrer" class="project-domain-pill">
+                <i class="fa-solid fa-file-pdf"></i> Soutenance PDF
+              </a>
             </div>
           </div>
         </article>
 
-        <!-- PROJECT 2: Telintec GIS -->
-        <article class="pharmaq-card glass-card project-pharmaq" data-cat="systems">
-          <div class="pharmaq-preview-wrap">
-            <img src="assets/projet_telintec_gis.png" alt="Telintec GIS Preview" class="pharmaq-img">
-            <div class="pharmaq-top-bar">
-              <span class="pharmaq-status-badge badge-graduated"><img src="assets/telintec.png" alt="Telintec"
-                  style="width:16px; height:16px; object-fit:contain; vertical-align:middle; margin-right:4px;"> FTTH ·
-                Stage PFE</span>
-              <a href="https://github.com/azelmad2004/telintec_gis" target="_blank" rel="noopener noreferrer"
-                class="pharmaq-mini-gh" title="GitHub Repository"><i class="fa-brands fa-github"></i></a>
-            </div>
+        <!-- PROJECT 2: Khlas Wallet (Unified FinTech Project) -->
+        <article class="project-split-card glass-card" data-cat="fintech">
+          <div class="project-split-media">
+            <img src="assets/khlas_wallet.png" alt="Khlas Wallet Preview" class="project-split-img">
+            <a href="https://github.com/azelmad2004/khlas_wallet" target="_blank" rel="noopener noreferrer" class="project-media-pill">
+              <i class="fa-brands fa-github"></i> Source Code
+            </a>
           </div>
-          <div class="pharmaq-overlay-pill">
-            <div class="pharmaq-pill-header">
-              <h3 class="pharmaq-title">Telintec GIS</h3>
-              <a href="https://github.com/azelmad2004/telintec_gis" target="_blank" rel="noopener noreferrer"
-                class="pharmaq-arrow" title="Voir Projet"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <div class="project-split-body">
+            <div class="project-split-header">
+              <h3 class="project-split-title">Khlas Wallet</h3>
+              <span class="project-split-meta">FinTech, 2026</span>
             </div>
-            <p class="pharmaq-desc">
-              Système d'Information Géographique & cartographie d'infrastructure fibre optique GPON / ADSL — traçage des
-              liaisons optiques OLT/ONT, calcul des bilans optiques et gestion du cadastre télécom.
+            <p class="project-split-desc">
+              Unified FinTech QR-code mobile payment wallet &amp; financial AI platform integrating double-entry bookkeeping, Moroccan TVA automation and real-time ML fraud detection.
             </p>
-            <div class="pharmaq-tags">
-              <span>Python</span><span>QGIS</span><span>GPON</span><span>Fibre Optique</span>
+            <div class="project-spec-table">
+              <div class="project-spec-row">
+                <span class="spec-label">My part</span>
+                <span class="spec-value">Full-Stack &amp; FinTech ML architect</span>
+              </div>
+              <div class="project-spec-row">
+                <span class="spec-label">Built with</span>
+                <span class="spec-value">React Native, Expo, Django REST, scikit-learn, PostgreSQL</span>
+              </div>
+              <div class="project-spec-row">
+                <span class="spec-label">Outcome</span>
+                <span class="spec-value">End-to-end Bachelor GIGD FinTech platform with live anomaly scoring</span>
+              </div>
             </div>
-            <div class="pharmaq-footer-actions">
-              <a href="pdfs/RAPPORT_SFE_TELINTEC_GIS.pdf" target="_blank" rel="noopener noreferrer"
-                class="btn-pharmaq-action"><i class="fa-solid fa-file-pdf"></i> Rapport SFE PDF</a>
-              <a href="https://github.com/azelmad2004/telintec_gis" target="_blank" rel="noopener noreferrer"
-                class="btn-pharmaq-action"><i class="fa-brands fa-github"></i> GitHub</a>
+            <div class="project-decisions-wrap">
+              <button type="button" class="project-decisions-toggle" aria-expanded="false">
+                <span>Decisions</span>
+                <i class="fa-solid fa-plus"></i>
+              </button>
+              <div class="project-decisions-content">
+                <p>Enforced strict atomic Debit = Credit ledger invariants in PostgreSQL paired with a lightweight scikit-learn fraud classifier running on every QR transaction payload.</p>
+              </div>
+            </div>
+            <div class="project-split-actions">
+              <a href="https://github.com/azelmad2004/khlas_wallet" target="_blank" rel="noopener noreferrer" class="btn-primary-pill project-cta-pill">
+                Open repository
+              </a>
+              <span class="project-domain-pill">github.com/azelmad2004/khlas_wallet</span>
             </div>
           </div>
         </article>
 
-        <!-- PROJECT 3: Awal GPT -->
-        <article class="pharmaq-card glass-card project-pharmaq" data-cat="ai">
-          <div class="pharmaq-preview-wrap">
-            <img src="assets/projet_awal_gpt.png" alt="Awal GPT AI Preview" class="pharmaq-img">
-            <div class="pharmaq-top-bar">
-              <span class="pharmaq-status-badge badge-active"><img src="assets/awal_gpt_icon.png" alt="Awal GPT"
-                  style="width:16px; height:16px; object-fit:contain; vertical-align:middle; margin-right:4px;"> PFE
-                Très Bien · IRCAM</span>
-              <a href="https://github.com/azelmad2004/awalgpt" target="_blank" rel="noopener noreferrer"
-                class="pharmaq-mini-gh" title="GitHub Repository"><i class="fa-brands fa-github"></i></a>
-            </div>
+        <!-- PROJECT 3: Telintec GIS -->
+        <article class="project-split-card glass-card" data-cat="systems">
+          <div class="project-split-media">
+            <img src="assets/projet_telintec_gis.png" alt="Telintec GIS Preview" class="project-split-img">
+            <a href="pdfs/RAPPORT_SFE_TELINTEC_GIS.pdf" target="_blank" rel="noopener noreferrer" class="project-media-pill">
+              <i class="fa-solid fa-file-pdf"></i> Rapport SFE
+            </a>
           </div>
-          <div class="pharmaq-overlay-pill">
-            <div class="pharmaq-pill-header">
-              <h3 class="pharmaq-title">Awal GPT </h3>
-              <a href="https://www.researchgate.net/publication/406309058_AWAL_GPT_A_Conversational_AI_System_for_Latinized_Amazigh_Language"
-                target="_blank" rel="noopener noreferrer" class="pharmaq-arrow" title="Article ResearchGate"><i
-                  class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <div class="project-split-body">
+            <div class="project-split-header">
+              <h3 class="project-split-title">Telintec GIS</h3>
+              <span class="project-split-meta">FTTH &amp; GIS, 2026</span>
             </div>
-            <p class="pharmaq-desc">
-              Conversational AI System for Latinized Amazigh & Moroccan Darija — 9 000 entrées IRCAM avec recherche
-              approchée RapidFuzz, spaCy et architecture RAG locale Qwen2.5-3B.
+            <p class="project-split-desc">
+              Geographic Information System for GPON / ADSL fiber optic infrastructure mapping — OLT/ONT link tracing, optical budget calculation and telecom cadastre.
             </p>
-            <div class="pharmaq-tags">
-              <span>Python</span><span>RAG</span><span>Qwen2.5</span><span>spaCy</span><span>NLP</span>
+            <div class="project-spec-table">
+              <div class="project-spec-row">
+                <span class="spec-label">My part</span>
+                <span class="spec-value">GIS &amp; Telecom Engineering Intern (PFE)</span>
+              </div>
+              <div class="project-spec-row">
+                <span class="spec-label">Built with</span>
+                <span class="spec-value">Python, QGIS, GPON, OTDR, Spatial SQL</span>
+              </div>
+              <div class="project-spec-row">
+                <span class="spec-label">Outcome</span>
+                <span class="spec-value">Deployed field-ready fiber mapping &amp; optical loss calculator for Telintec SARL</span>
+              </div>
             </div>
-            <div class="pharmaq-footer-actions">
-              <a href="https://www.researchgate.net/publication/406309058_AWAL_GPT_A_Conversational_AI_System_for_Latinized_Amazigh_Language"
-                target="_blank" rel="noopener noreferrer" class="btn-pharmaq-action"><i
-                  class="fa-brands fa-researchgate"></i> ResearchGate</a>
-              <a href="pdfs/PRESENTATION_awal_gpt.pdf" target="_blank" rel="noopener noreferrer"
-                class="btn-pharmaq-action"><i class="fa-solid fa-file-pdf"></i> Soutenance</a>
-              <a href="https://github.com/azelmad2004/awalgpt" target="_blank" rel="noopener noreferrer"
-                class="btn-pharmaq-action"><i class="fa-brands fa-github"></i> GitHub</a>
+            <div class="project-decisions-wrap">
+              <button type="button" class="project-decisions-toggle" aria-expanded="false">
+                <span>Decisions</span>
+                <i class="fa-solid fa-plus"></i>
+              </button>
+              <div class="project-decisions-content">
+                <p>Automated optical power budget calculations directly inside QGIS layers using Python scripts so field technicians validate splitter attenuation before splicing.</p>
+              </div>
+            </div>
+            <div class="project-split-actions">
+              <a href="https://github.com/azelmad2004/telintec_gis" target="_blank" rel="noopener noreferrer" class="btn-primary-pill project-cta-pill">
+                View on GitHub
+              </a>
+              <span class="project-domain-pill">github.com/azelmad2004/telintec_gis</span>
             </div>
           </div>
         </article>
 
-        <!-- PROJECT 4: Mizan Agent (Khlas Wallet) -->
-        <article class="pharmaq-card glass-card project-pharmaq" data-cat="fintech">
-          <div class="pharmaq-preview-wrap pharmaq-no-img-fintech">
-            <div class="fintech-art-box">
-              <div class="fintech-art-icon"><i class="fa-solid fa-wallet"></i></div>
-              <h4 class="fintech-art-title">Mizan Agent</h4>
-              <p class="fintech-art-subtitle">Plateforme FinTech &amp; Automatisation Fiscale CGI</p>
-            </div>
-            <div class="pharmaq-top-bar">
-              <span class="pharmaq-status-badge badge-active"><span class="status-pulse"></span> FinTech · Bachelor
-                GIGD</span>
-              <a href="https://github.com/azelmad2004/khlas_wallet" target="_blank" rel="noopener noreferrer"
-                class="pharmaq-mini-gh" title="GitHub Repository"><i class="fa-brands fa-github"></i></a>
-            </div>
+        <!-- PROJECT 4: ServicePub Platform -->
+        <article class="project-split-card glass-card" data-cat="govtech">
+          <div class="project-split-media">
+            <img src="assets/projet_servicepub.png" alt="ServicePub Platform" class="project-split-img">
+            <a href="pdfs/RAPPORT_STAGE_COMMUNE_KHENIFRA_SERVICEPUB.pdf" target="_blank" rel="noopener noreferrer" class="project-media-pill">
+              <i class="fa-solid fa-file-pdf"></i> Rapport PDF
+            </a>
           </div>
-          <div class="pharmaq-overlay-pill">
-            <div class="pharmaq-pill-header">
-              <h3 class="pharmaq-title">Mizan Agent (Khlas Wallet)</h3>
-              <a href="https://github.com/azelmad2004/khlas_wallet" target="_blank" rel="noopener noreferrer"
-                class="pharmaq-arrow" title="Voir Projet"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <div class="project-split-body">
+            <div class="project-split-header">
+              <h3 class="project-split-title">ServicePub</h3>
+              <span class="project-split-meta">E-Gov, 2025</span>
             </div>
-            <p class="pharmaq-desc">
-              Agent IA financier & portefeuille mobile de paiement par scan de QR code (React Native & Expo) intégrant
-              un pipeline scikit-learn de détection temps-réel de fraudes transactionnelles.
+            <p class="project-split-desc">
+              Digital public-service portal for the Commune of Khénifra — citizen request submission, paperless tracking and role-based municipal admin dashboard.
             </p>
-            <div class="pharmaq-tags">
-              <span>React Native</span><span>Expo</span><span>scikit-learn</span><span>FinTech</span><span>QR Pay</span>
+            <div class="project-spec-table">
+              <div class="project-spec-row">
+                <span class="spec-label">My part</span>
+                <span class="spec-value">Full-Stack Developer Intern</span>
+              </div>
+              <div class="project-spec-row">
+                <span class="spec-label">Built with</span>
+                <span class="spec-value">Django, JavaScript, SQLite, Tailwind CSS, JWT</span>
+              </div>
+              <div class="project-spec-row">
+                <span class="spec-label">Outcome</span>
+                <span class="spec-value">Delivered complete citizen-to-municipality workflow with audit logging</span>
+              </div>
             </div>
-            <div class="pharmaq-footer-actions">
-              <a href="https://github.com/azelmad2004/khlas_wallet" target="_blank" rel="noopener noreferrer"
-                class="btn-pharmaq-action"><i class="fa-brands fa-github"></i> Code Source</a>
+            <div class="project-decisions-wrap">
+              <button type="button" class="project-decisions-toggle" aria-expanded="false">
+                <span>Decisions</span>
+                <i class="fa-solid fa-plus"></i>
+              </button>
+              <div class="project-decisions-content">
+                <p>Built a state-machine ticket workflow with bilingual AR/FR forms and immutable status timestamps to ensure accountability for municipal agents.</p>
+              </div>
+            </div>
+            <div class="project-split-actions">
+              <a href="https://github.com/azelmad2004/servicepub" target="_blank" rel="noopener noreferrer" class="btn-primary-pill project-cta-pill">
+                View on GitHub
+              </a>
+              <span class="project-domain-pill">github.com/azelmad2004/servicepub</span>
             </div>
           </div>
         </article>
 
-        <!-- PROJECT 5: ServicePub Platform -->
-        <article class="pharmaq-card glass-card project-pharmaq" data-cat="govtech">
-          <div class="pharmaq-preview-wrap">
-            <img src="assets/projet_servicepub.png" alt="ServicePub Platform" class="pharmaq-img">
-            <div class="pharmaq-top-bar">
-              <span class="pharmaq-status-badge badge-graduated"><i class="fa-solid fa-building-columns"></i> E-Gov ·
-                Commune</span>
-              <a href="https://github.com/azelmad2004/servicepub" target="_blank" rel="noopener noreferrer"
-                class="pharmaq-mini-gh" title="GitHub Repository"><i class="fa-brands fa-github"></i></a>
-            </div>
+        <!-- PROJECT 5: UniStay -->
+        <article class="project-split-card glass-card" data-cat="mobile">
+          <div class="project-split-media">
+            <img src="assets/unistay .png" alt="UniStay Platform Preview" class="project-split-img">
+            <a href="https://github.com/azelmad2004/unistay" target="_blank" rel="noopener noreferrer" class="project-media-pill">
+              <i class="fa-brands fa-github"></i> Source Code
+            </a>
           </div>
-          <div class="pharmaq-overlay-pill">
-            <div class="pharmaq-pill-header">
-              <h3 class="pharmaq-title">ServicePub Platform</h3>
-              <a href="https://github.com/azelmad2004/servicepub" target="_blank" rel="noopener noreferrer"
-                class="pharmaq-arrow" title="Voir Projet"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <div class="project-split-body">
+            <div class="project-split-header">
+              <h3 class="project-split-title">UniStay</h3>
+              <span class="project-split-meta">Mobile &amp; Web, 2025</span>
             </div>
-            <p class="pharmaq-desc">
-              Plateforme E-Gov de digitalisation des démarches administratives pour la Commune de Khénifra — portail
-              citoyen, suivi dématérialisé des requêtes et tableau de bord décisionnel sécurisé.
+            <p class="project-split-desc">
+              Student housing mobile &amp; web platform for Moroccan universities — smart roommate matching, lease management and virtual property tours.
             </p>
-            <div class="pharmaq-tags">
-              <span>Django</span><span>JavaScript</span><span>SQLite</span><span>E-Gov</span>
+            <div class="project-spec-table">
+              <div class="project-spec-row">
+                <span class="spec-label">My part</span>
+                <span class="spec-value">Enactus President &amp; Lead Mobile Developer</span>
+              </div>
+              <div class="project-spec-row">
+                <span class="spec-label">Built with</span>
+                <span class="spec-value">Flutter, Dart, Firebase, UI/UX</span>
+              </div>
+              <div class="project-spec-row">
+                <span class="spec-label">Outcome</span>
+                <span class="spec-value">Flagship social entrepreneurship product for Enactus EST Khénifra</span>
+              </div>
             </div>
-            <div class="pharmaq-footer-actions">
-              <a href="pdfs/RAPPORT_STAGE_COMMUNE_KHENIFRA_SERVICEPUB.pdf" target="_blank" rel="noopener noreferrer"
-                class="btn-pharmaq-action"><i class="fa-solid fa-file-pdf"></i> Rapport PDF</a>
-              <a href="https://github.com/azelmad2004/servicepub" target="_blank" rel="noopener noreferrer"
-                class="btn-pharmaq-action"><i class="fa-brands fa-github"></i> GitHub</a>
+            <div class="project-decisions-wrap">
+              <button type="button" class="project-decisions-toggle" aria-expanded="false">
+                <span>Decisions</span>
+                <i class="fa-solid fa-plus"></i>
+              </button>
+              <div class="project-decisions-content">
+                <p>Selected Flutter + Firebase for rapid cross-platform iOS/Android iteration and real-time verified landlord-student messaging.</p>
+              </div>
+            </div>
+            <div class="project-split-actions">
+              <a href="https://github.com/azelmad2004/unistay" target="_blank" rel="noopener noreferrer" class="btn-primary-pill project-cta-pill">
+                View on GitHub
+              </a>
+              <span class="project-domain-pill">github.com/azelmad2004/unistay</span>
             </div>
           </div>
         </article>
@@ -1344,6 +1527,7 @@
             <div class="exp-tags-row">
               <span>Fibre Optique GPON</span><span>QGIS</span><span>Python</span><span>OTDR</span><span>Réseaux</span>
             </div>
+            <a href="https://www.linkedin.com/company/telintec/" target="_blank" rel="noopener noreferrer" class="exp-official-link"><i class="fa-brands fa-linkedin-in"></i> Voir Telintec SARL</a>
           </div>
         </article>
 
@@ -1366,6 +1550,10 @@
             <div class="exp-tags-row">
               <span>Full-Stack</span><span>React</span><span>Django</span><span>FastAPI</span><span>REST
                 APIs</span><span>PostgreSQL</span>
+            </div>
+            <div class="exp-links-row">
+              <a href="https://github.com/azelmad2004" target="_blank" rel="noopener noreferrer" class="exp-official-link"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="https://www.linkedin.com/in/mohamed-azelmad-908973281/" target="_blank" rel="noopener noreferrer" class="exp-official-link"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
             </div>
           </div>
         </article>
@@ -1390,6 +1578,7 @@
             <div class="exp-tags-row">
               <span>PHP / Laravel</span><span>MySQL</span><span>Tailwind CSS</span><span>Gouvernance SI</span>
             </div>
+            <a href="https://communekhenifra.ma/" target="_blank" rel="noopener noreferrer" class="exp-official-link"><i class="fa-solid fa-building-columns"></i> Commune de Khénifra</a>
           </div>
         </article>
 
@@ -1413,6 +1602,7 @@
             <div class="exp-tags-row">
               <span>Direction Artistique</span><span>Figma</span><span>Premiere Pro</span><span>Communication</span>
             </div>
+            <a href="https://www.instagram.com/moroccanleadershipseminar/" target="_blank" rel="noopener noreferrer" class="exp-official-link"><i class="fa-brands fa-instagram"></i> Moroccan Leadership Seminar</a>
           </div>
         </article>
 
@@ -1436,6 +1626,7 @@
             <div class="exp-tags-row">
               <span>Leadership</span><span>Gestion de Projet</span><span>Entrepreneuriat</span><span>Scrum</span>
             </div>
+            <a href="https://enactusestkh.github.io/enactus/" target="_blank" rel="noopener noreferrer" class="exp-official-link"><i class="fa-solid fa-globe"></i> Enactus EST Khénifra</a>
           </div>
         </article>
 
@@ -1459,6 +1650,7 @@
             <div class="exp-tags-row">
               <span>Mentorat</span><span>Workshops Tech</span><span>Web &amp; IA</span><span>Événementiel</span>
             </div>
+            <a href="https://estkh.usms.ac.ma/" target="_blank" rel="noopener noreferrer" class="exp-official-link"><i class="fa-solid fa-school"></i> EST Khénifra</a>
           </div>
         </article>
 
@@ -1482,6 +1674,7 @@
             <div class="exp-tags-row">
               <span>Figma</span><span>Photoshop</span><span>HTML5</span><span>CSS3</span><span>WordPress</span>
             </div>
+            <a href="https://www.facebook.com/AssociationRawassi/" target="_blank" rel="noopener noreferrer" class="exp-official-link"><i class="fa-brands fa-facebook-f"></i> Association Rawassi</a>
           </div>
         </article>
 
@@ -1514,7 +1707,7 @@
               </div>
             </div>
           </div>
-          <a href="https://estkh.usms.ac.ma/" target="_blank" rel="noopener noreferrer" class="pharmaq-overlay-pill">
+          <a href="https://est.uit.ac.ma/" target="_blank" rel="noopener noreferrer" class="pharmaq-overlay-pill">
             <div class="pharmaq-pill-header">
               <h3 class="pharmaq-title">EST Kénitra — Bachelor GIGD</h3>
               <span class="pharmaq-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
@@ -1598,10 +1791,10 @@
               </div>
             </div>
           </div>
-          <div class="pharmaq-overlay-pill">
+          <a href="https://www.men.gov.ma/" target="_blank" rel="noopener noreferrer" class="pharmaq-overlay-pill">
             <div class="pharmaq-pill-header">
               <h3 class="pharmaq-title">Parcours Baccalauréat (Sciences & Pro)</h3>
-              <span class="pharmaq-arrow"><i class="fa-solid fa-check-double"></i></span>
+              <span class="pharmaq-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
             </div>
             <p class="pharmaq-desc">
               • <strong>Baccalauréat Libre Sciences Mathématiques A :</strong> Lycée Hassan II, Midelt (2024) — Rigueur
@@ -1614,7 +1807,7 @@
             <div class="pharmaq-tags">
               <span>Sciences Math A</span><span>Bac Libre SMPC</span><span>Bac Pro Réseaux</span><span>Midelt</span>
             </div>
-          </div>
+          </a>
         </article>
 
       </div>
@@ -1633,7 +1826,82 @@
       <!-- 10 Original Certificate Cards (Exact Screenshot Layout & Authentic Links) -->
       <div class="certs-carousel-wrapper">
         <div class="certs-image-grid">
-          <!-- Cert 1: Masterclass in FinTech (CFTE London) - FIRST -->
+          <!-- Cert 0A: Kaggle — Intro to Deep Learning -->
+          <article class="glass-card cert-card-screenshot">
+            <div class="cert-doc-preview-wrap">
+              <img src="assets/MOHAMED AZELMAD - Intro to Deep Learning.png" alt="Kaggle Intro to Deep Learning Certificate"
+                class="cert-doc-img">
+            </div>
+            <div class="cert-footer-box">
+              <div class="cert-provider-chip kaggle-provider">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="#20BEFF" aria-hidden="true">
+                  <path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.335"/>
+                </svg>
+                <span style="font-size:0.65rem; font-weight:700; color:#20beff; margin-left:4px;">KAGGLE</span>
+              </div>
+              <div class="cert-footer-info">
+                <h4 class="cert-doc-title">Intro to Deep Learning</h4>
+                <p class="cert-doc-desc">Neural networks, stochastic gradient descent, batch normalization &amp; dropout — Kaggle certified.</p>
+                <a href="https://www.kaggle.com/learn/certification/mohamedazelmad255555/intro-to-deep-learning"
+                  target="_blank" rel="noopener noreferrer" class="cert-arrow-link">
+                  <span>See certificate</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cert 0B: Kaggle — Intro to Machine Learning -->
+          <article class="glass-card cert-card-screenshot">
+            <div class="cert-doc-preview-wrap">
+              <img src="assets/MOHAMED AZELMAD - Intro to Machine Learning.png" alt="Kaggle Intro to Machine Learning Certificate"
+                class="cert-doc-img">
+            </div>
+            <div class="cert-footer-box">
+              <div class="cert-provider-chip kaggle-provider">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="#20BEFF" aria-hidden="true">
+                  <path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.335"/>
+                </svg>
+                <span style="font-size:0.65rem; font-weight:700; color:#20beff; margin-left:4px;">KAGGLE</span>
+              </div>
+              <div class="cert-footer-info">
+                <h4 class="cert-doc-title">Intro to Machine Learning</h4>
+                <p class="cert-doc-desc">Decision trees, model validation, random forests &amp; XGBoost — Kaggle certified.</p>
+                <a href="https://www.kaggle.com/learn/certification/mohamedazelmad255555/intro-to-machine-learning"
+                  target="_blank" rel="noopener noreferrer" class="cert-arrow-link">
+                  <span>See certificate</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cert 0C: Trainy Certification -->
+          <article class="glass-card cert-card-screenshot">
+            <div class="cert-doc-preview-wrap">
+              <img src="assets/Trainy_certification_-_azelmad_mohamed.png" alt="Trainy Certification - Mohamed Azelmad"
+                class="cert-doc-img">
+            </div>
+            <div class="cert-footer-box">
+              <div class="cert-provider-chip trainy-provider">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--primary)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 6h16M12 6v13M8 19h8"/>
+                </svg>
+                <span style="font-size:0.65rem; font-weight:700; color:var(--primary); margin-left:4px;">TRAINY</span>
+              </div>
+              <div class="cert-footer-info">
+                <h4 class="cert-doc-title">Trainy Finance Certification</h4>
+                <p class="cert-doc-desc">Trainy.co online finance certification validating essential skills in Financial Analysis, Financial Accounting, and Corporate Finance.</p>
+                <a href="assets/Trainy_certification_-_azelmad_mohamed.png" target="_blank" rel="noopener noreferrer"
+                  class="cert-arrow-link">
+                  <span>See certificate</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cert 1: Masterclass in FinTech (CFTE London) -->
           <article class="glass-card cert-card-screenshot">
             <div class="cert-doc-preview-wrap">
               <img src="assets/certificates/cfte_certificate.jpg" alt="Masterclass in FinTech - CFTE Certificate"
@@ -2130,6 +2398,74 @@
       </div>
     </section>
 
+    <!-- HOW WELL DO YOU KNOW ME? QUIZ SECTION -->
+    <section class="section-container" id="knowme">
+      <div class="section-header">
+        <div class="section-eyebrow">BEYOND THE CODE</div>
+        <h2 class="section-title gradient-glow-text">How well do you know me?</h2>
+        <p class="section-subtitle">Four quick MMA guesses. No pressure.</p>
+      </div>
+
+      <div class="knowme-quiz-grid" id="knowmeQuiz">
+
+        <!-- Q1: MMA Promotion -->
+        <div class="quiz-card glass-card" data-answer="0">
+          <div class="quiz-card-num">1 /</div>
+          <h3 class="quiz-card-question">My favourite MMA promotion?</h3>
+          <div class="quiz-options">
+            <button type="button" class="quiz-opt" data-idx="0">🥊 UFC</button>
+            <button type="button" class="quiz-opt" data-idx="1">💥 PFL</button>
+            <button type="button" class="quiz-opt" data-idx="2">👊 Bellator</button>
+          </div>
+          <div class="quiz-feedback" aria-live="polite"></div>
+        </div>
+
+        <!-- Q2: MMA GOAT -->
+        <div class="quiz-card glass-card" data-answer="1">
+          <div class="quiz-card-num">2 /</div>
+          <h3 class="quiz-card-question">My all-time MMA GOAT?</h3>
+          <div class="quiz-options">
+            <button type="button" class="quiz-opt" data-idx="0">🦅 Khabib Nurmagomedov</button>
+            <button type="button" class="quiz-opt" data-idx="1">🦴 Jon Jones</button>
+            <button type="button" class="quiz-opt" data-idx="2">🥋 Georges St-Pierre</button>
+          </div>
+          <div class="quiz-feedback" aria-live="polite"></div>
+        </div>
+
+        <!-- Q3: Weight Division -->
+        <div class="quiz-card glass-card" data-answer="1">
+          <div class="quiz-card-num">3 /</div>
+          <h3 class="quiz-card-question">Favourite UFC weight division to watch?</h3>
+          <div class="quiz-options">
+            <button type="button" class="quiz-opt" data-idx="0">⚡ Lightweight (155 lb)</button>
+            <button type="button" class="quiz-opt" data-idx="1">🔥 Welterweight (170 lb)</button>
+            <button type="button" class="quiz-opt" data-idx="2">🦁 Heavyweight (265 lb)</button>
+          </div>
+          <div class="quiz-feedback" aria-live="polite"></div>
+        </div>
+
+        <!-- Q4: Fighting Style -->
+        <div class="quiz-card glass-card" data-answer="1">
+          <div class="quiz-card-num">4 /</div>
+          <h3 class="quiz-card-question">My favourite MMA fighting base?</h3>
+          <div class="quiz-options">
+            <button type="button" class="quiz-opt" data-idx="0">🤼 Wrestling &amp; Sambo</button>
+            <button type="button" class="quiz-opt" data-idx="1">🦵 Muay Thai &amp; Striking</button>
+            <button type="button" class="quiz-opt" data-idx="2">🥋 Brazilian Jiu-Jitsu</button>
+          </div>
+          <div class="quiz-feedback" aria-live="polite"></div>
+        </div>
+
+      </div>
+
+      <div class="quiz-score-reveal glass-card" id="quizScoreReveal" style="display:none;">
+        <span class="quiz-score-emoji">🎯</span>
+        <h3 class="quiz-score-title">Score: <span id="quizScoreNum">0</span> / 4</h3>
+        <p class="quiz-score-desc">Not bad! Now you know a bit more about the person behind the code.</p>
+        <button type="button" class="btn-glass-pill" id="quizResetBtn">Try Again <i class="fa-solid fa-rotate-right"></i></button>
+      </div>
+    </section>
+
     <!-- CONTACT SECTION (EXACT MOCKUP FORM LAYOUT & ONE-CLICK CONNECT) -->
     <section class="section-container" id="contact">
       <div class="contact-glass-wrapper">
@@ -2197,6 +2533,8 @@
                 class="social-glass-icon" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
               <a href="https://www.instagram.com/azelmadmohamed04/" target="_blank" rel="noopener noreferrer"
                 class="social-glass-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.kaggle.com/mohamedazelmad255555" target="_blank" rel="noopener noreferrer"
+                class="social-glass-icon" title="Kaggle"><i class="fa-solid fa-k"></i></a>
             </div>
           </div>
 
@@ -2257,7 +2595,10 @@
   <footer class="glass-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <span class="footer-logo"> Mohamed Azelmad</span>
+        <div class="footer-logo-wrap">
+          <img src="assets/LOGO_principal.png" alt="Mohamed Azelmad Logo" class="footer-principal-logo">
+          <span class="footer-logo">Mohamed Azelmad</span>
+        </div>
         <p class="footer-tagline" data-i18n="footer.tagline">Développeur Full-Stack à la croisée de l'ingénierie
           logicielle et de la finance. Basé à Kénitra & Midelt, Maroc.</p>
       </div>
@@ -2271,6 +2612,7 @@
         <a href="#contact">Contact</a>
         <a href="https://github.com/azelmad2004" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://leetcode.com/u/mohmadazelmad/" target="_blank" rel="noopener noreferrer">LeetCode</a>
+        <a href="https://www.kaggle.com/mohamedazelmad255555" target="_blank" rel="noopener noreferrer">Kaggle</a>
         <a href="https://www.linkedin.com/in/mohamed-azelmad-908973281/" target="_blank"
           rel="noopener noreferrer">LinkedIn</a>
       </div>
@@ -2301,8 +2643,10 @@
 
       <div class="cv-preview-container">
         <div class="cv-header">
-          <div>
-            <h2 class="cv-name">Mohamed Azelmad</h2>
+          <div class="cv-header-left">
+            <img src="assets/LOGO_principal.png" alt="Mohamed Azelmad Logo" class="cv-logo-3d">
+            <div>
+              <h2 class="cv-name">Mohamed Azelmad</h2>
             <p class="cv-subtitle">Full-Stack Developer · Systems & Networks Engineer · FinTech & AI Specialist</p>
             <div class="cv-contact-row">
               <span><i class="fa-solid fa-envelope"></i> mohmadazelmad3@gmail.com</span>
@@ -2310,6 +2654,7 @@
               <span><i class="fa-solid fa-location-dot"></i> Kénitra, Morocco</span>
               <span><i class="fa-brands fa-github"></i> github.com/azelmad2004</span>
               <span><i class="fa-solid fa-code"></i> leetcode.com/u/mohmadazelmad</span>
+            </div>
             </div>
           </div>
           <div class="cv-actions">
@@ -2396,7 +2741,7 @@
               <h3 class="cv-sec-title">Key Projects</h3>
               <p>• <strong>Awal GPT:</strong> First AI RAG platform for Moroccan Darija & Amazigh.</p>
               <p>• <strong>ServicePub:</strong> E-Governance portal built for Ministère de l'Intérieur.</p>
-              <p>• <strong>MyWallet MW (Khlas Wallet):</strong> FinTech SaaS with double-entry accounting & automated
+              <p>• <strong>Khlas Wallet:</strong> FinTech SaaS with QR payments, double-entry accounting &amp; automated
                 VAT.</p>
               <p>• <strong>UniStay App:</strong> Flutter mobile student housing matching platform.</p>
             </div>
@@ -2435,7 +2780,7 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=20261128"></script>
 </body>
 
 </html>
